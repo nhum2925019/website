@@ -193,30 +193,30 @@
     }
   }
 </script>
+  
 <script>
-<script>
-(function () {
-  const today = new Date().toISOString().slice(0,10);
+document.addEventListener("DOMContentLoaded", function () {
+  const today = new Date().toISOString().slice(0, 10);
 
-  let total = localStorage.getItem('totalVisits') || 0;
-  let todayCount = localStorage.getItem('todayVisits') || 0;
-  let lastDate = localStorage.getItem('lastVisitDate');
+  let total = localStorage.getItem("totalVisits") || 0;
+  let todayCount = localStorage.getItem("todayVisits") || 0;
+  let lastDate = localStorage.getItem("lastVisitDate");
 
   if (lastDate !== today) {
     todayCount = 0;
-    localStorage.setItem('lastVisitDate', today);
+    localStorage.setItem("lastVisitDate", today);
   }
 
   total = parseInt(total) + 1;
   todayCount = parseInt(todayCount) + 1;
 
-  localStorage.setItem('totalVisits', total);
-  localStorage.setItem('todayVisits', todayCount);
+  localStorage.setItem("totalVisits", total);
+  localStorage.setItem("todayVisits", todayCount);
 
-  document.getElementById('total-visits').textContent = total;
-  document.getElementById('today-visits').textContent = todayCount;
-})();
+  document.getElementById("total-visits").textContent = total;
+  document.getElementById("today-visits").textContent = todayCount;
+});
 </script>
-
+  
 </body>
 </html>
